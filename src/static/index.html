@@ -4,14 +4,42 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ops Briefing</title>
-  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/style.css?v=design-clean-1">
 </head>
 <body>
   <main class="shell">
     <header class="mobileHeader">
       <strong>OPS INTEL</strong>
-      <span aria-hidden="true">&#9776;</span>
+      <button id="settingsToggle" class="settingsButton" type="button" aria-label="Settings">&#9881;</button>
     </header>
+    <section id="settingsPanel" class="settingsOverlay hidden" aria-modal="true" role="dialog">
+      <div class="settingsPanel">
+        <div class="panelHead">
+          <h2>Settings</h2>
+          <button id="settingsClose" type="button" aria-label="Close settings">&times;</button>
+        </div>
+        <div class="themeSetting">
+          <span>Theme</span>
+          <label class="themeSwitch" for="themeToggle">
+            <input id="themeToggle" type="checkbox">
+            <span class="switchTrack"><span class="switchThumb"></span></span>
+            <b id="themeLabel">Dark</b>
+          </label>
+        </div>
+        <div class="dbCountCard">
+          <span>Event Database</span>
+          <b id="eventCount">Loading...</b>
+        </div>
+        <form id="stationForm" class="stationForm">
+          <label for="stationInput">Base Station</label>
+          <div class="stationRow">
+            <input id="stationInput" placeholder="RKSI" autocomplete="off" maxlength="4">
+            <button id="stationSave" type="submit">Add</button>
+          </div>
+        </form>
+        <div id="stationEditList" class="stationEditList"></div>
+      </div>
+    </section>
     <section class="search">
       <label for="flight">Flight</label>
       <div class="row">
@@ -20,10 +48,11 @@
       </div>
       <p id="status"></p>
     </section>
+    <section id="baseWeather" class="baseWeather"></section>
 
     <section id="context" class="context hidden"></section>
     <section id="threats" class="threats"></section>
   </main>
-  <script src="/static/app.js"></script>
+  <script src="/static/app.js?v=design-clean-1"></script>
 </body>
 </html>

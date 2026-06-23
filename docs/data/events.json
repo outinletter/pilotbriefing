@@ -1,0 +1,572 @@
+{
+  "generated_at": "2026-06-23T11:53:38.170377Z",
+  "events": [
+    {
+      "id": "DPS-2013-RWY09-B738-WATER-IMPACT",
+      "event_date": "2013-04-13",
+      "published_date": null,
+      "source_name": "Sample/demo data",
+      "source_url": "",
+      "operation_type": "Part 121 style international",
+      "airport_iata": "DPS",
+      "airport_icao": "WADD",
+      "runway": "RWY09",
+      "approach_type": "VISUAL",
+      "flight_phase": "APPROACH",
+      "aircraft_type": "B737-800",
+      "aircraft_category": "JET",
+      "operator": "Sample carrier",
+      "weather_summary": "TSRA/NIGHT/VIS3KM",
+      "event_type": "WATER IMPACT BEFORE THR",
+      "severity": 5,
+      "core_event": "Water Impact 900m Short of Threshold",
+      "lesson_keyword": "Below Glidepath",
+      "summary": "Sample event: aircraft descended below intended approach path and impacted water short of runway.",
+      "contributing_factors": [
+        "Below glidepath",
+        "Visual illusion",
+        "Reduced visibility"
+      ],
+      "operational_lessons": [
+        "Monitor visual approaches with instruments",
+        "Call deviations early",
+        "Go around decisively"
+      ],
+      "pilot_briefing_sentence": "At DPS RWY09 in TSRA or reduced visibility, treat the visual segment as instrument-monitored until touchdown.",
+      "tags": [
+        "TSRA",
+        "NIGHT",
+        "LOW_VISIBILITY",
+        "UNSTABLE_APPROACH_RISK",
+        "CONVECTIVE_WEATHER"
+      ]
+    },
+    {
+      "id": "DPS-RWY27-B738-LONG-LANDING",
+      "event_date": "2018-01-21",
+      "published_date": null,
+      "source_name": "Sample/demo data",
+      "source_url": null,
+      "operation_type": "Part 121 style international",
+      "airport_iata": "DPS",
+      "airport_icao": "WADD",
+      "runway": "RWY27",
+      "approach_type": "ILS",
+      "flight_phase": "LANDING",
+      "aircraft_type": "B737-800",
+      "aircraft_category": "JET",
+      "operator": "Sample carrier",
+      "weather_summary": "WET RWY/TW8KT",
+      "event_type": "LONG LANDING",
+      "severity": 4,
+      "core_event": "Long Landing on Wet Runway",
+      "lesson_keyword": "Continuation Bias",
+      "summary": "Sample event: touchdown occurred beyond planned zone on a wet runway with tailwind component.",
+      "contributing_factors": [
+        "Tailwind",
+        "Wet runway",
+        "Late touchdown"
+      ],
+      "operational_lessons": [
+        "Recompute landing distance",
+        "Respect stable gate",
+        "Go around after long flare"
+      ],
+      "pilot_briefing_sentence": "For wet DPS arrivals, brief touchdown-zone limits and tailwind landing-distance margin.",
+      "tags": [
+        "WET_RWY",
+        "TAILWIND",
+        "UNSTABLE_APPROACH_RISK"
+      ]
+    },
+    {
+      "id": "DPS-RWY09-B789-TSRA-GA",
+      "event_date": "2021-11-02",
+      "published_date": null,
+      "source_name": "Sample/demo data",
+      "source_url": null,
+      "operation_type": "Long-haul Part 121 style",
+      "airport_iata": "DPS",
+      "airport_icao": "WADD",
+      "runway": "RWY09",
+      "approach_type": "VISUAL",
+      "flight_phase": "APPROACH",
+      "aircraft_type": "B787-9",
+      "aircraft_category": "JET",
+      "operator": "Sample carrier",
+      "weather_summary": "TSRA/CB/G25KT",
+      "event_type": "UNSTABLE APP GO-AROUND",
+      "severity": 4,
+      "core_event": "Unstable Approach Go-Around",
+      "lesson_keyword": "Early Decision",
+      "summary": "Sample event: crew discontinued approach after convective cell moved near final.",
+      "contributing_factors": [
+        "CB near final",
+        "Gusty wind",
+        "High workload"
+      ],
+      "operational_lessons": [
+        "Set convective gates",
+        "Plan early missed approach",
+        "Avoid last-minute visual continuation"
+      ],
+      "pilot_briefing_sentence": "When CB is near DPS final, make the go-around decision before descending below stable criteria.",
+      "tags": [
+        "TSRA",
+        "CB",
+        "GUST",
+        "CONVECTIVE_WEATHER",
+        "UNSTABLE_APPROACH_RISK"
+      ]
+    },
+    {
+      "id": "DPS-RWY09-A333-WSHEAR-MA",
+      "event_date": "2019-03-12",
+      "published_date": null,
+      "source_name": "Sample/demo data",
+      "source_url": null,
+      "operation_type": "Part 121 style international",
+      "airport_iata": "DPS",
+      "airport_icao": "WADD",
+      "runway": "RWY09",
+      "approach_type": "RNAV",
+      "flight_phase": "APPROACH",
+      "aircraft_type": "A330-300",
+      "aircraft_category": "JET",
+      "operator": "Sample carrier",
+      "weather_summary": "TSRA/WINDSHEAR",
+      "event_type": "WINDSHEAR ALERT",
+      "severity": 5,
+      "core_event": "Windshear Alert on Final",
+      "lesson_keyword": "Missed Approach",
+      "summary": "Sample event: windshear alert occurred during short final in convective rain.",
+      "contributing_factors": [
+        "Windshear",
+        "Heavy rain",
+        "Short final"
+      ],
+      "operational_lessons": [
+        "Execute escape guidance",
+        "Delay approach in active cells",
+        "Coordinate runway change"
+      ],
+      "pilot_briefing_sentence": "Treat windshear reports at DPS as a hard trigger for delay or missed approach.",
+      "tags": [
+        "TSRA",
+        "WINDSHEAR",
+        "HEAVY_RAIN",
+        "CONVECTIVE_WEATHER"
+      ]
+    },
+    {
+      "id": "DPS-RWY09-A359-VISUAL-ILLUSION",
+      "event_date": "2022-08-19",
+      "published_date": null,
+      "source_name": "Sample/demo data",
+      "source_url": null,
+      "operation_type": "A350 long-haul operation",
+      "airport_iata": "DPS",
+      "airport_icao": "WADD",
+      "runway": "RWY09",
+      "approach_type": "VISUAL",
+      "flight_phase": "APPROACH",
+      "aircraft_type": "A350-900",
+      "aircraft_category": "JET",
+      "operator": "Sample carrier",
+      "weather_summary": "NIGHT/VIS4KM",
+      "event_type": "LOW PATH WARNING",
+      "severity": 4,
+      "core_event": "Low Visual Path on Night Approach",
+      "lesson_keyword": "Instrument Crosscheck",
+      "summary": "Sample event: night visual segment produced a low-path deviation corrected after callout.",
+      "contributing_factors": [
+        "Black-hole effect",
+        "Night",
+        "Visual transition"
+      ],
+      "operational_lessons": [
+        "Maintain vertical guidance",
+        "Use PM callouts",
+        "Go around if path not recovered"
+      ],
+      "pilot_briefing_sentence": "At night over water into DPS RWY09, keep instrument vertical guidance primary.",
+      "tags": [
+        "NIGHT",
+        "LOW_VISIBILITY",
+        "UNSTABLE_APPROACH_RISK"
+      ]
+    },
+    {
+      "id": "DPS-RWY09-B789-GPS-INTEG",
+      "event_date": "2020-06-07",
+      "published_date": null,
+      "source_name": "Sample/demo data",
+      "source_url": null,
+      "operation_type": "B787 long-haul operation",
+      "airport_iata": "DPS",
+      "airport_icao": "WADD",
+      "runway": "RWY09",
+      "approach_type": "RNAV",
+      "flight_phase": "APPROACH",
+      "aircraft_type": "B787-9",
+      "aircraft_category": "JET",
+      "operator": "Sample carrier",
+      "weather_summary": "GPS RAIM ALERT/VMC",
+      "event_type": "RNAV DISCONTINUED",
+      "severity": 3,
+      "core_event": "GPS Integrity Alert Before Final",
+      "lesson_keyword": "Approach Backup",
+      "summary": "Sample event: crew switched to alternate approach after GPS integrity alert.",
+      "contributing_factors": [
+        "GPS integrity",
+        "Late setup",
+        "Approach change"
+      ],
+      "operational_lessons": [
+        "Brief raw-data backup",
+        "Confirm database and RAIM",
+        "Avoid rushed reconfiguration"
+      ],
+      "pilot_briefing_sentence": "For RNAV into DPS, brief an immediate backup approach if GPS integrity degrades.",
+      "tags": [
+        "GPS_INTEGRITY"
+      ]
+    },
+    {
+      "id": "ICN-DPS-A359-ETOPS-DIVERSION",
+      "event_date": "2023-02-14",
+      "published_date": null,
+      "source_name": "Sample/demo data",
+      "source_url": null,
+      "operation_type": "A350 long-haul operation",
+      "airport_iata": "DPS",
+      "airport_icao": "WADD",
+      "runway": "",
+      "approach_type": "ENROUTE",
+      "flight_phase": "CRUISE",
+      "aircraft_type": "A350-900",
+      "aircraft_category": "JET",
+      "operator": "Sample carrier",
+      "weather_summary": "ETOPS ALTERNATE TSRA",
+      "event_type": "ETOPS DIVERSION REVIEW",
+      "severity": 3,
+      "core_event": "ETOPS Alternate Weather Deterioration",
+      "lesson_keyword": "Diversion Margin",
+      "summary": "Sample event: destination and alternate weather required early fuel and diversion reassessment.",
+      "contributing_factors": [
+        "Convective weather",
+        "Long-haul fuel planning",
+        "Alternate trend"
+      ],
+      "operational_lessons": [
+        "Monitor alternate TAFs",
+        "Set fuel decision points",
+        "Coordinate dispatch early"
+      ],
+      "pilot_briefing_sentence": "On ICN-DPS, update ETOPS and destination alternates before committing beyond fuel decision points.",
+      "tags": [
+        "CONVECTIVE_WEATHER",
+        "THUNDERSTORM"
+      ]
+    },
+    {
+      "id": "ICN-DPS-B789-ENG-INDICATION",
+      "event_date": "2021-05-03",
+      "published_date": null,
+      "source_name": "Sample/demo data",
+      "source_url": null,
+      "operation_type": "B787 long-haul operation",
+      "airport_iata": "DPS",
+      "airport_icao": "WADD",
+      "runway": "",
+      "approach_type": "ENROUTE",
+      "flight_phase": "CRUISE",
+      "aircraft_type": "B787-9",
+      "aircraft_category": "JET",
+      "operator": "Sample carrier",
+      "weather_summary": "IMC ENROUTE",
+      "event_type": "ENGINE INDICATION ANOMALY",
+      "severity": 3,
+      "core_event": "Engine Indication Anomaly",
+      "lesson_keyword": "QRH Discipline",
+      "summary": "Sample event: abnormal indication required QRH review and diversion planning.",
+      "contributing_factors": [
+        "Long overwater sector",
+        "System anomaly",
+        "Decision timing"
+      ],
+      "operational_lessons": [
+        "Use QRH without delay",
+        "Compare trend data",
+        "Keep diversion options open"
+      ],
+      "pilot_briefing_sentence": "For long overwater sectors, brief engine-indication decision gates and diversion airports.",
+      "tags": [
+        "ETOPS"
+      ]
+    },
+    {
+      "id": "ICN-DPS-A359-MEL-DISPATCH",
+      "event_date": "2024-01-09",
+      "published_date": null,
+      "source_name": "Sample/demo data",
+      "source_url": null,
+      "operation_type": "A350 long-haul operation",
+      "airport_iata": "DPS",
+      "airport_icao": "WADD",
+      "runway": "",
+      "approach_type": "DISPATCH",
+      "flight_phase": "PREFLIGHT",
+      "aircraft_type": "A350-900",
+      "aircraft_category": "JET",
+      "operator": "Sample carrier",
+      "weather_summary": "DEST TSRA",
+      "event_type": "MEL DISPATCH ISSUE",
+      "severity": 3,
+      "core_event": "MEL Limitation Affected Destination Strategy",
+      "lesson_keyword": "MEL Threat Review",
+      "summary": "Sample event: MEL limitation interacted with convective destination forecast and alternate planning.",
+      "contributing_factors": [
+        "MEL limitation",
+        "Destination thunderstorm forecast",
+        "Dispatch pressure"
+      ],
+      "operational_lessons": [
+        "Tie MEL review to destination threats",
+        "Confirm performance penalties",
+        "Use conservative alternate planning"
+      ],
+      "pilot_briefing_sentence": "When MEL items affect approach, landing, or diversion capability, connect them directly to the destination weather threat.",
+      "tags": [
+        "CONVECTIVE_WEATHER",
+        "THUNDERSTORM"
+      ]
+    },
+    {
+      "id": "SIN-RWY20-A359-CROSSWIND-WET",
+      "event_date": "2022-04-22",
+      "published_date": null,
+      "source_name": "Sample/demo data",
+      "source_url": null,
+      "operation_type": "Part 121 style international",
+      "airport_iata": "SIN",
+      "airport_icao": "WSSS",
+      "runway": "RWY20",
+      "approach_type": "ILS",
+      "flight_phase": "LANDING",
+      "aircraft_type": "A350-900",
+      "aircraft_category": "JET",
+      "operator": "Sample carrier",
+      "weather_summary": "WET RWY/XW25KT",
+      "event_type": "LATERAL DEVIATION",
+      "severity": 3,
+      "core_event": "Crosswind Landing Deviation",
+      "lesson_keyword": "Control Margin",
+      "summary": "Sample event: wet runway and crosswind reduced rollout margin.",
+      "contributing_factors": [
+        "Crosswind",
+        "Wet runway",
+        "Gust"
+      ],
+      "operational_lessons": [
+        "Review crosswind limits",
+        "Use correct autobrake",
+        "Go around if alignment unstable"
+      ],
+      "pilot_briefing_sentence": "For wet crosswind arrivals, brief control transfer, rollout callouts, and go-around triggers.",
+      "tags": [
+        "WET_RWY",
+        "CROSSWIND",
+        "GUST"
+      ]
+    },
+    {
+      "id": "MNL-RWY24-B738-FOG-LOWVIS",
+      "event_date": "2020-12-30",
+      "published_date": null,
+      "source_name": "Sample/demo data",
+      "source_url": null,
+      "operation_type": "Part 121 style international",
+      "airport_iata": "MNL",
+      "airport_icao": "RPLL",
+      "runway": "RWY24",
+      "approach_type": "ILS",
+      "flight_phase": "APPROACH",
+      "aircraft_type": "B737-800",
+      "aircraft_category": "JET",
+      "operator": "Sample carrier",
+      "weather_summary": "FOG/VIS800M",
+      "event_type": "LOW VIS MISSED APPROACH",
+      "severity": 3,
+      "core_event": "Low Visibility Missed Approach",
+      "lesson_keyword": "Minima Discipline",
+      "summary": "Sample event: runway environment not acquired at minima.",
+      "contributing_factors": [
+        "Fog",
+        "Low visibility",
+        "Expectation bias"
+      ],
+      "operational_lessons": [
+        "Call minima precisely",
+        "Avoid duck-under",
+        "Brief lighting requirements"
+      ],
+      "pilot_briefing_sentence": "In low visibility, commit to a missed approach unless required visual references are clearly acquired.",
+      "tags": [
+        "FOG",
+        "LOW_VISIBILITY"
+      ]
+    },
+    {
+      "id": "HKG-RWY25R-B789-TAILWIND",
+      "event_date": "2019-09-18",
+      "published_date": null,
+      "source_name": "Sample/demo data",
+      "source_url": null,
+      "operation_type": "B787 long-haul operation",
+      "airport_iata": "HKG",
+      "airport_icao": "VHHH",
+      "runway": "RWY25R",
+      "approach_type": "ILS",
+      "flight_phase": "LANDING",
+      "aircraft_type": "B787-9",
+      "aircraft_category": "JET",
+      "operator": "Sample carrier",
+      "weather_summary": "TAILWIND/GUST",
+      "event_type": "HIGH ENERGY APPROACH",
+      "severity": 3,
+      "core_event": "High Energy Approach With Tailwind",
+      "lesson_keyword": "Stable Gate",
+      "summary": "Sample event: approach remained high and fast until late stabilization.",
+      "contributing_factors": [
+        "Tailwind",
+        "ATC speed",
+        "Late descent"
+      ],
+      "operational_lessons": [
+        "Request vectors early",
+        "Use speedbrakes within policy",
+        "Go around when gate missed"
+      ],
+      "pilot_briefing_sentence": "With tailwind or high-energy vectors, protect the stable gate over schedule pressure.",
+      "tags": [
+        "TAILWIND",
+        "GUST",
+        "UNSTABLE_APPROACH_RISK"
+      ]
+    },
+    {
+      "id": "PHNL-RWY08L-B78X-CROSSWIND",
+      "event_date": "2022-07-18",
+      "published_date": null,
+      "source_name": "Sample/demo data",
+      "source_url": null,
+      "operation_type": "B787 long-haul operation",
+      "airport_iata": "HNL",
+      "airport_icao": "PHNL",
+      "runway": "RWY08L",
+      "approach_type": "ILS",
+      "flight_phase": "LANDING",
+      "aircraft_type": "B787-10",
+      "aircraft_category": "JET",
+      "operator": "Sample carrier",
+      "weather_summary": "XW22KT/GUST",
+      "event_type": "CROSSWIND ALIGNMENT DEVIATION",
+      "severity": 3,
+      "core_event": "Crosswind Alignment Deviation",
+      "lesson_keyword": "Stabilized Sideslip",
+      "summary": "Sample event: long-haul arrival encountered gusty trade-wind crosswind during final alignment.",
+      "contributing_factors": [
+        "Crosswind",
+        "Gust",
+        "Long-haul fatigue"
+      ],
+      "operational_lessons": [
+        "Brief crosswind technique",
+        "Protect stable criteria",
+        "Go around if alignment is late"
+      ],
+      "pilot_briefing_sentence": "For PHNL arrivals in gusty trade winds, set an early alignment gate and avoid late de-crab corrections.",
+      "tags": [
+        "CROSSWIND",
+        "GUST",
+        "UNSTABLE_APPROACH_RISK"
+      ]
+    },
+    {
+      "id": "PHNL-RWY08L-B78X-LOWVIS-RAIN",
+      "event_date": "2021-12-04",
+      "published_date": null,
+      "source_name": "Sample/demo data",
+      "source_url": null,
+      "operation_type": "B787 long-haul operation",
+      "airport_iata": "HNL",
+      "airport_icao": "PHNL",
+      "runway": "RWY08L",
+      "approach_type": "RNAV",
+      "flight_phase": "APPROACH",
+      "aircraft_type": "B787-10",
+      "aircraft_category": "JET",
+      "operator": "Sample carrier",
+      "weather_summary": "SHRA/VIS4KM",
+      "event_type": "LATE VISUAL TRANSITION",
+      "severity": 3,
+      "core_event": "Late Visual Transition in Rain",
+      "lesson_keyword": "Instrument Path Monitoring",
+      "summary": "Sample event: rain shower reduced visual cues during transition from instrument guidance.",
+      "contributing_factors": [
+        "Rain shower",
+        "Reduced visibility",
+        "Visual transition"
+      ],
+      "operational_lessons": [
+        "Keep instrument path primary",
+        "Call visual cue loss",
+        "Continue only if stable"
+      ],
+      "pilot_briefing_sentence": "At PHNL in rain showers, maintain instrument path monitoring until runway alignment is assured.",
+      "tags": [
+        "WET_RWY",
+        "LOW_VISIBILITY",
+        "UNSTABLE_APPROACH_RISK"
+      ]
+    },
+    {
+      "id": "ICN-HNL-B78X-ETOPS-FUEL",
+      "event_date": "2023-06-11",
+      "published_date": null,
+      "source_name": "Sample/demo data",
+      "source_url": null,
+      "operation_type": "B787 long-haul operation",
+      "airport_iata": "HNL",
+      "airport_icao": "PHNL",
+      "runway": "",
+      "approach_type": "ENROUTE",
+      "flight_phase": "CRUISE",
+      "aircraft_type": "B787-10",
+      "aircraft_category": "JET",
+      "operator": "Sample carrier",
+      "weather_summary": "PACIFIC ETOPS/WX DEVIATION",
+      "event_type": "ETOPS FUEL MARGIN REVIEW",
+      "severity": 3,
+      "core_event": "Pacific ETOPS Fuel Margin Review",
+      "lesson_keyword": "Early Reclearance",
+      "summary": "Sample event: convective deviations over the Pacific required early fuel and alternate reassessment.",
+      "contributing_factors": [
+        "Long overwater sector",
+        "Weather deviation",
+        "Fuel decision point"
+      ],
+      "operational_lessons": [
+        "Update alternates early",
+        "Coordinate dispatch before fuel gates",
+        "Preserve diversion options"
+      ],
+      "pilot_briefing_sentence": "On ICN-HNL, review ETOPS alternates and fuel decision gates before weather deviations accumulate.",
+      "tags": [
+        "ETOPS",
+        "CONVECTIVE_WEATHER"
+      ]
+    }
+  ]
+}

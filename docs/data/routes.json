@@ -1,0 +1,97 @@
+{
+  "generated_at": "2026-06-23T11:53:38.134830Z",
+  "routes": {
+    "KE053": {
+      "departure_iata": "ICN",
+      "arrival_iata": "HNL",
+      "aircraft_type": "B787-10",
+      "departure_icao": "RKSI",
+      "arrival_icao": "PHNL"
+    },
+    "KE53": {
+      "departure_iata": "ICN",
+      "arrival_iata": "HNL",
+      "aircraft_type": "B787-10",
+      "departure_icao": "RKSI",
+      "arrival_icao": "PHNL"
+    },
+    "KE054": {
+      "departure_iata": "HNL",
+      "arrival_iata": "ICN",
+      "aircraft_type": "B787-10",
+      "departure_icao": "PHNL",
+      "arrival_icao": "RKSI"
+    },
+    "KE54": {
+      "departure_iata": "HNL",
+      "arrival_iata": "ICN",
+      "aircraft_type": "B787-10",
+      "departure_icao": "PHNL",
+      "arrival_icao": "RKSI"
+    },
+    "KE629": {
+      "departure_iata": "ICN",
+      "arrival_iata": "DPS",
+      "aircraft_type": "A350-900",
+      "scheduled_arrival": "2026-06-22T15:00:00+00:00",
+      "departure_icao": "RKSI",
+      "arrival_icao": "WADD"
+    },
+    "KE630": {
+      "departure_iata": "DPS",
+      "arrival_iata": "ICN",
+      "aircraft_type": "A350-900",
+      "scheduled_arrival": "2026-06-22T23:00:00+00:00",
+      "departure_icao": "WADD",
+      "arrival_icao": "RKSI"
+    },
+    "KE017": {
+      "departure_iata": "ICN",
+      "arrival_iata": "LAX",
+      "aircraft_type": "B777-300ER",
+      "scheduled_arrival": "2026-06-22T18:00:00+00:00",
+      "departure_icao": "RKSI",
+      "arrival_icao": "KLAX"
+    },
+    "KE018": {
+      "departure_iata": "LAX",
+      "arrival_iata": "ICN",
+      "aircraft_type": "B777-300ER",
+      "scheduled_arrival": "2026-06-22T21:00:00+00:00",
+      "departure_icao": "KLAX",
+      "arrival_icao": "RKSI"
+    },
+    "KE705": {
+      "departure_iata": "ICN",
+      "arrival_iata": "NRT",
+      "aircraft_type": "A330-300",
+      "scheduled_arrival": "2026-06-22T05:00:00+00:00",
+      "departure_icao": "RKSI",
+      "arrival_icao": "RJAA"
+    },
+    "KE706": {
+      "departure_iata": "NRT",
+      "arrival_iata": "ICN",
+      "aircraft_type": "A330-300",
+      "scheduled_arrival": "2026-06-22T10:00:00+00:00",
+      "departure_icao": "RJAA",
+      "arrival_icao": "RKSI"
+    }
+  },
+  "airports": {
+    "ICN": "RKSI",
+    "DPS": "WADD",
+    "LAX": "KLAX",
+    "HNL": "PHNL",
+    "NRT": "RJAA",
+    "HND": "RJTT",
+    "SIN": "WSSS",
+    "BKK": "VTBS",
+    "MNL": "RPLL",
+    "HKG": "VHHH",
+    "DXB": "OMDB",
+    "JFK": "KJFK",
+    "CDG": "LFPG",
+    "LHR": "EGLL"
+  }
+}

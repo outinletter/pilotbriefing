@@ -25,3 +25,23 @@ The backend uses Aviationstack when `AVIATIONSTACK_API_KEY` is set. If the fligh
 
 `sample_events.json` contains clearly marked sample/demo events for prevention-briefing behavior. They are not official accident records unless a source URL says otherwise.
 
+## GitHub Pages Static Site
+
+The `docs/` folder contains a static GitHub Pages version that runs without FastAPI.
+
+```powershell
+uv run --with-requirements requirements.txt python tools\export_static_site_data.py
+git add docs tools\export_static_site_data.py
+git commit -m "Update static GitHub Pages briefing"
+git push
+```
+
+In GitHub repository settings, enable Pages with:
+
+- Source: Deploy from a branch
+- Branch: `main`
+- Folder: `/docs`
+
+The public URL will be:
+
+`https://outinletter.github.io/pilotbriefing/`

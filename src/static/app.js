@@ -3,6 +3,25 @@ const searchButton = document.querySelector("#search");
 const statusEl = document.querySelector("#status");
 const contextEl = document.querySelector("#context");
 const threatsEl = document.querySelector("#threats");
+const baseWeatherEl = document.querySelector("#baseWeather");
+const settingsToggle = document.querySelector("#settingsToggle");
+const settingsPanel = document.querySelector("#settingsPanel");
+const settingsClose = document.querySelector("#settingsClose");
+const stationForm = document.querySelector("#stationForm");
+const stationInput = document.querySelector("#stationInput");
+const stationSave = document.querySelector("#stationSave");
+const stationEditList = document.querySelector("#stationEditList");
+const themeToggle = document.querySelector("#themeToggle");
+const themeLabel = document.querySelector("#themeLabel");
+const eventCountEl = document.querySelector("#eventCount");
+
+const STATIONS_KEY = "opsIntelBaseStations";
+const THEME_KEY = "opsIntelTheme";
+let editingStation = "";
+
+function syncMobileTheme() {
+  document.body.classList.toggle("mobileBriefing", window.innerWidth <= 820);
+}
 
 function esc(value) {
   return String(value ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -16,6 +35,138 @@ function eventSimilarity(event) {
 
 function riskLabel(value) {
   return String(value || "LOW").toUpperCase();
+}
+
+function applyTheme(theme) {
+  const normalized = theme === "light" ? "light" : "dark";
+  document.body.classList.toggle("lightTheme", normalized === "light");
+  document.body.classList.toggle("darkTheme", normalized === "dark");
+  themeToggle.checked = normalized === "light";
+  themeLabel.textContent = normalized === "light" ? "Light" : "Dark";
+  localStorage.setItem(THEME_KEY, normalized);
+}
+
+function normalizeStation(value) {
+  return String(value || "").trim().toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 4);
+}
+
+function loadStations() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(STATIONS_KEY) || "[]");
+    if (Array.isArray(saved) && saved.length) return saved.map(normalizeStation).filter(Boolean);
+  } catch (error) {
+    localStorage.removeItem(STATIONS_KEY);
+  }
+  return ["RKSI"];
+}
+
+function saveStations(stations) {
+  const unique = [...new Set(stations.map(normalizeStation).filter(station => station.length === 4))];
+  localStorage.setItem(STATIONS_KEY, JSON.stringify(unique));
+  return unique;
+}
+
+function renderStationEditor() {
+  const stations = loadStations();
+  stationEditList.innerHTML = stations.map(station => `
+    <div class="stationEditItem">
+      <b>${esc(station)}</b>
+      <button type="button" data-edit-station="${esc(station)}">Edit</button>
+      <button type="button" data-delete-station="${esc(station)}">Delete</button>
+    </div>
+  `).join("") || `<p class="emptyState">No base stations saved.</p>`;
+  stationEditList.querySelectorAll("[data-edit-station]").forEach(button => {
+    button.addEventListener("click", () => {
+      editingStation = button.dataset.editStation;
+      stationInput.value = editingStation;
+      stationSave.textContent = "Save";
+      stationInput.focus();
+    });
+  });
+  stationEditList.querySelectorAll("[data-delete-station]").forEach(button => {
+    button.addEventListener("click", () => {
+      saveStations(loadStations().filter(station => station !== button.dataset.deleteStation));
+      renderStationEditor();
+      renderBaseWeather();
+    });
+  });
+}
+
+async function renderEventCount() {
+  eventCountEl.textContent = "Loading...";
+  try {
+    const response = await fetch("/api/ops-intel/status");
+    if (!response.ok) throw new Error("Status unavailable");
+    const status = await response.json();
+    eventCountEl.textContent = `${status.items_in_database ?? 0} events`;
+  } catch (error) {
+    eventCountEl.textContent = "Unavailable";
+  }
+}
+
+function openSettings() {
+  settingsPanel.classList.remove("hidden");
+  document.body.classList.add("settingsOpen");
+  renderStationEditor();
+  renderEventCount();
+  stationInput.focus();
+}
+
+function closeSettings() {
+  settingsPanel.classList.add("hidden");
+  document.body.classList.remove("settingsOpen");
+  editingStation = "";
+  stationInput.value = "";
+  stationSave.textContent = "Add";
+}
+
+async function fetchStationWeather(station) {
+  const response = await fetch(`/api/weather/${encodeURIComponent(station)}`);
+  if (!response.ok) throw new Error("Weather unavailable");
+  return response.json();
+}
+
+async function renderBaseWeather() {
+  const stations = loadStations();
+  if (!stations.length) {
+    baseWeatherEl.innerHTML = `
+      <article class="baseWxCard">
+        <h2>Base Station WX</h2>
+        <p class="emptyState">Open settings and add a base station.</p>
+      </article>
+    `;
+    return;
+  }
+  baseWeatherEl.innerHTML = `
+    <article class="baseWxCard">
+      <div class="baseWxHead">
+        <h2>Base Station WX</h2>
+        <button type="button" id="refreshBaseWx">Refresh</button>
+      </div>
+      <div class="baseWxList">
+        ${stations.map(station => `
+          <section class="baseWxItem" data-station="${esc(station)}">
+            <strong>${esc(station)}</strong>
+            <span>Loading weather...</span>
+          </section>
+        `).join("")}
+      </div>
+    </article>
+  `;
+  document.querySelector("#refreshBaseWx").addEventListener("click", renderBaseWeather);
+  await Promise.all(stations.map(async station => {
+    const item = baseWeatherEl.querySelector(`[data-station="${station}"]`);
+    try {
+      const wx = await fetchStationWeather(station);
+      item.innerHTML = `
+        <strong>${esc(station)}</strong>
+        <pre>${esc(wx.metar || "METAR unavailable")}</pre>
+        <pre>${esc(wx.taf || "TAF unavailable")}</pre>
+      `;
+    } catch (error) {
+      item.innerHTML = `<strong>${esc(station)}</strong><span>Weather unavailable</span>`;
+    }
+  }));
 }
 
 function renderContext(ctx) {
@@ -98,6 +249,7 @@ async function loadBriefing() {
     const response = await fetch(`/api/briefing/${encodeURIComponent(flight)}`);
     if (!response.ok) throw new Error("Briefing unavailable");
     const data = await response.json();
+    baseWeatherEl.classList.add("hidden");
     renderContext(data.flight_context);
     renderThreats(data.top_threats || []);
     document.body.classList.add("briefingLoaded");
@@ -110,8 +262,34 @@ async function loadBriefing() {
   }
 }
 
+settingsToggle.addEventListener("click", openSettings);
+settingsClose.addEventListener("click", closeSettings);
+settingsPanel.addEventListener("click", event => {
+  if (event.target === settingsPanel) closeSettings();
+});
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape" && !settingsPanel.classList.contains("hidden")) closeSettings();
+});
+stationForm.addEventListener("submit", event => {
+  event.preventDefault();
+  const station = normalizeStation(stationInput.value);
+  if (station.length !== 4) return;
+  const stations = loadStations().filter(item => item !== editingStation && item !== station);
+  saveStations([...stations, station]);
+  editingStation = "";
+  stationInput.value = "";
+  stationSave.textContent = "Add";
+  renderStationEditor();
+  renderBaseWeather();
+  closeSettings();
+});
 searchButton.addEventListener("click", loadBriefing);
 flightInput.addEventListener("keydown", event => {
   if (event.key === "Enter") loadBriefing();
 });
-loadBriefing();
+window.addEventListener("resize", syncMobileTheme);
+themeToggle.addEventListener("change", () => applyTheme(themeToggle.checked ? "light" : "dark"));
+syncMobileTheme();
+applyTheme(localStorage.getItem(THEME_KEY) || "dark");
+renderStationEditor();
+renderBaseWeather();

@@ -69,3 +69,15 @@ async def briefing(flight_number: str, db: Session = Depends(get_db)):
     ))
     db.commit()
     return {"flight_context": context, "top_threats": build_threats(db, context, tags)}
+
+
+@router.get("/api/weather/{icao}")
+async def station_weather(icao: str):
+    station = icao.strip().upper()
+    weather, messages = await get_weather(station)
+    return {
+        "station": station,
+        "metar": weather.get("metar", ""),
+        "taf": weather.get("taf", ""),
+        "messages": messages,
+    }
