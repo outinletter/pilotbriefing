@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ops Briefing</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="mobileHeader">
+      <strong>OPS INTEL</strong>
+      <span aria-hidden="true">&#9776;</span>
+    </header>
+    <section class="search">
+      <label for="flight">Flight</label>
+      <div class="row">
+        <input id="flight" value="KE629" autocomplete="off">
+        <button id="search">Search</button>
+      </div>
+      <p id="status"></p>
+    </section>
+
+    <section id="context" class="context hidden"></section>
+    <section id="threats" class="threats"></section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+[
+  {
+    "name": "FAA Safety Briefing",
+    "url": "https://www.faa.gov/newsroom/faa-safety-briefing-magazine",
+    "category": "Training",
+    "tags": ["FAA", "Safety Briefing", "Part 121", "Part 135", "Training"]
+  },
+  {
+    "name": "FAA Regulations and Policies",
+    "url": "https://www.faa.gov/regulations_policies",
+    "category": "Regulation",
+    "tags": ["FAA", "Regulation", "FAR", "SMS", "FOQA"]
+  },
+  {
+    "name": "NTSB Aviation Investigations",
+    "url": "https://www.ntsb.gov/investigations/Pages/aviation.aspx",
+    "category": "Accident / Incident",
+    "tags": ["NTSB", "Accident", "Incident", "Safety Recommendation"]
+  },
+  {
+    "name": "NASA ASRS",
+    "url": "https://asrs.arc.nasa.gov/",
+    "category": "Human Factors / CRM",
+    "tags": ["ASRS", "Human Factors", "CRM", "Fatigue"]
+  },
+  {
+    "name": "Flight Safety Foundation",
+    "url": "https://flightsafety.org/",
+    "category": "Flight Operations",
+    "tags": ["Safety", "Operations", "Training"]
+  },
+  {
+    "name": "ICAO Safety",
+    "url": "https://www.icao.int/safety-reports",
+    "category": "Flight Operations",
+    "tags": ["ICAO", "Safety", "Global"]
+  },
+  {
+    "name": "EASA Safety Publications",
+    "url": "https://www.easa.europa.eu/en/domains/safety-management/safety-publications",
+    "category": "Regulation",
+    "tags": ["EASA", "Safety", "Regulation"]
+  },
+  {
+    "name": "SKYbrary",
+    "url": "https://skybrary.aero/",
+    "category": "Training",
+    "tags": ["Operational Lessons", "Training", "Threat and Error Management"]
+  },
+  {
+    "name": "Aviation Week",
+    "url": "https://aviationweek.com/",
+    "category": "Industry Trends",
+    "tags": ["Industry", "Fleet", "Operations"]
+  },
+  {
+    "name": "The Air Current",
+    "url": "https://theaircurrent.com/",
+    "category": "Industry Trends",
+    "tags": ["Industry", "Operations", "Analysis"]
+  }
+]

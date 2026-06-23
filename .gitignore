@@ -1,0 +1,10 @@
+.env
+key/
+*.db
+*.sqlite
+*.sqlite3
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.edge-shot*/
+reports/
