@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pilot Threat Briefing</title>
+  <style>
+    :root{color-scheme:light;--telegraph-font:"Courier New",Courier,"Lucida Console",Monaco,monospace;--bg:#f4f7f8;--panel:#fff;--line:#d8e2e7;--text:#17242b;--muted:#61737d;--blue:#0f5f85;--amber:#b7791f;--red:#c24135;--green:#2f855a}
+    *{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#eef5f7 0%,var(--bg) 220px);color:var(--text);font-family:var(--telegraph-font)}.shell{width:min(760px,100%);margin:0 auto;padding:14px}.search{padding:12px 0}label{display:block;color:var(--muted);font-size:12px;text-transform:uppercase;margin-bottom:6px}.row{display:grid;grid-template-columns:1fr 92px;gap:8px}input,button{border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--text);min-height:44px;font-family:var(--telegraph-font);font-size:18px;padding:0 12px}#flight{font-weight:700;letter-spacing:.04em}button{background:var(--blue);color:#fff;font-weight:700}.context{position:static;background:rgba(255,255,255,.96);border:1px solid var(--line);box-shadow:0 8px 24px rgba(35,58,68,.08);border-radius:8px;padding:12px;margin-bottom:14px}.contextTop{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.contextTop strong,.contextTop span{display:block}.contextTop span{color:var(--muted);margin-top:4px;font-size:13px}.risk{padding:0;font-size:12px;background:transparent;color:var(--green);font-weight:700}.risk.medium{color:var(--amber)}.risk.high,.risk.critical{color:var(--red);font-weight:800}.chips,.eventMeta{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}.chips span,.eventMeta span{border:1px solid var(--line);border-radius:999px;padding:5px 8px;color:var(--muted);font-size:12px}.forecastBasis{border-left:3px solid var(--blue);margin:10px 0;padding:8px 10px;background:#f8fbfc}.forecastBasis b,.forecastBasis span{display:block}.forecastBasis b{font-size:12px;color:var(--text)}.forecastBasis span{color:var(--muted);font-size:12px;margin-top:3px}.weatherText{white-space:pre-wrap;margin:8px 0 0;color:#23343c;font-family:var(--telegraph-font);font-size:13px;font-weight:600;line-height:1.5;letter-spacing:0}.threat{border-top:1px solid var(--line);padding:16px 0}h2{font-size:18px;margin:0 0 6px}.threat>p{color:var(--muted);margin:0 0 10px;font-size:14px}details{border:1px solid var(--line);border-radius:7px;margin:8px 0;background:var(--panel);box-shadow:0 2px 8px rgba(35,58,68,.05)}summary{display:flex;align-items:center;gap:8px;cursor:pointer;overflow-x:auto;padding:11px;color:var(--blue)}summary::marker,summary::-webkit-details-marker{content:"";display:none}.dropIcon{flex:0 0 auto;color:var(--blue);font-size:14px;line-height:1}details[open] .dropIcon{transform:rotate(90deg)}summary span{display:block;min-width:max-content;white-space:nowrap;font-family:var(--telegraph-font);font-size:13px;color:#22333b}.detail{border-top:1px solid var(--line);padding:12px}.eventMeta{margin:0 0 10px}h3{margin:0 0 8px;font-size:15px}ul{margin:6px 0 12px 18px;padding:0}li,.detail p{color:#394b54;font-size:14px;line-height:1.45}.brief{color:var(--amber);font-weight:700}.mobileHeader,.threatsTitle,.mobileEventMeta,.threatRank,.eventRisk{display:none}
+    @media(max-width:430px){body{min-height:100vh;overflow-x:hidden;background:linear-gradient(180deg,#eef5f7 0%,var(--bg) 220px);color:var(--text)}.shell{width:100%;max-width:430px;min-height:100vh;padding:12px 10px 18px}.mobileHeader{display:flex;align-items:center;justify-content:space-between;margin:4px 0 12px;color:var(--text)}.mobileHeader strong{position:relative;padding-left:0;font-size:12px;letter-spacing:0}.mobileHeader strong::before{content:none}.mobileHeader span{color:var(--muted);font-size:18px}.search{display:none}.row{grid-template-columns:minmax(0,1fr) 82px}input,button{border-color:var(--line);background:var(--panel);color:var(--text);border-radius:7px;font-size:16px}button{background:#2f72d7}.context{position:static;border-color:var(--line);background:rgba(255,255,255,.96);box-shadow:0 8px 24px rgba(35,58,68,.08);border-radius:8px;padding:12px;margin-bottom:12px}.contextTop strong{color:var(--text);font-size:17px;line-height:1.2}.contextTop span{color:var(--muted);font-size:12px}.risk{background:transparent;color:var(--green);padding:0;font-size:11px;text-transform:uppercase}.risk.medium{background:transparent;color:var(--amber)}.risk.high,.risk.critical{background:transparent;color:var(--red);font-weight:800}.chips{margin:9px 0 10px}.chips span,.eventMeta span{border-color:var(--line);background:#f8fbfc;color:var(--muted);font-size:10px}.forecastBasis{border-left:0;border:1px solid var(--line);border-radius:7px;background:#f8fbfc;margin:10px 0;padding:9px}.forecastBasis b{color:var(--blue);font-size:12px}.forecastBasis span{color:var(--muted)}.weatherText{overflow-wrap:anywhere;color:#23343c;font-size:11px;line-height:1.55;font-weight:500}.context>.weatherText:last-child{border-top:1px solid var(--line);padding-top:8px}.threats{border:1px solid var(--line);border-radius:8px;background:var(--panel);box-shadow:0 2px 8px rgba(35,58,68,.05);overflow:hidden}.threatsTitle{display:block;margin:0;padding:12px 12px 6px;color:var(--text);font-size:15px}.threat{border-top:1px solid var(--line);padding:0}.threat>h2{display:flex;align-items:flex-start;gap:8px;margin:0;padding:10px 12px 0;color:var(--text);font-size:12px;line-height:1.25}.threatRank{display:block;flex:0 0 16px;color:var(--amber);font-size:13px;font-weight:700}.desktopThreatPrefix,.threat>p,.eventLine{display:none}details{border:0;border-radius:0;margin:0;background:transparent;box-shadow:none}summary{display:grid;grid-template-columns:14px minmax(0,1fr) auto;gap:7px;align-items:center;padding:4px 10px 10px 34px;overflow:visible}.dropIcon{color:var(--blue);font-size:11px}.mobileEventMeta{display:block;min-width:0;color:var(--muted);white-space:normal;font-family:var(--telegraph-font);font-size:10px;line-height:1.3}.eventRisk{display:block;grid-column:3;grid-row:1;align-self:start}.detail{border-top:1px solid var(--line);background:#f8fbfc;padding:12px}.detail h3{margin:0 0 10px;color:var(--text);font-size:16px;line-height:1.35}.detail b{color:var(--text);font-size:13px}li,.detail p{color:#394b54;font-size:12px;line-height:1.55}.brief{color:var(--amber)}}@media(max-width:390px){.shell{padding:10px}h2{font-size:16px}summary span{font-size:12px}}
+  </style>
+</head>
+<body class="briefingLoaded">
+  <main class="shell">
+    <header class="mobileHeader">
+      <strong>Pilot Threat Briefing</strong>
+      <span aria-hidden="true">&#9776;</span>
+    </header>
+    <section class="search">
+      <label for="flight">Pilot Threat Briefing</label>
+      <div class="row">
+        <input id="flight" value="KE629" autocomplete="off" readonly>
+        <button type="button">Search</button>
+      </div>
+      <p id="status"></p>
+    </section>
+
+    <section class="context">
+      <div class="contextTop">
+        <div>
+          <strong>KE629 ICN-DPS</strong>
+          <span>RKSI -> WADD - A350-900</span>
+        </div>
+        <b class="risk low">LOW</b>
+      </div>
+      <div class="chips">
+        <span>RWY09</span>
+        <span>ROUTE ONLY</span>
+      </div>
+      <div class="forecastBasis">
+        <b>Threat basis</b>
+        <span>2026-06-22T15:00:00+00:00</span>
+        <pre class="weatherText">TAF WADD 241100Z 2412/2518 12012KT 9999 SCT016</pre>
+      </div>
+      <pre class="weatherText">METAR WADD 241330Z 12011KT 9999 FEW017 27/24 Q1013 NOSIG</pre>
+      <pre class="weatherText">TAF WADD 241100Z 2412/2518 12012KT 9999 SCT016</pre>
+    </section>
+
+    <section class="threats">
+      <h2 class="threatsTitle">Today's Top Threats</h2>
+
+      <section class="threat">
+        <h2><span class="desktopThreatPrefix">Threat 1: </span><span class="threatRank">1</span>Convective Weather Near Final Approach</h2>
+        <p>Thunderstorm cells near final can rapidly reduce path, speed, and wind margin.</p>
+        <div class="events">
+          <details open>
+            <summary>
+              <span class="dropIcon">&gt;</span>
+              <span class="eventLine">75% | RWY09 | TSRA/NIGHT/VIS3KM | VISUAL | B737-800 | WATER IMPACT BEFORE THR | BELOW GLIDEPATH</span>
+              <span class="mobileEventMeta">Events 1 - Similar 75%</span>
+              <b class="risk eventRisk critical">CRITICAL</b>
+            </summary>
+            <div class="detail">
+              <h3>2013 DPS RWY09 VISUAL B737-800 | TSRA/NIGHT/VIS3KM | Water Impact 900m Short of Threshold - Below Glidepath</h3>
+              <div class="eventMeta"><span>2013-04-13</span><span>Part 121 style international</span><span>Accident / Incident</span><span>Critical</span></div>
+              <p>Sample event: aircraft descended below intended approach path and impacted water short of runway.</p>
+              <b>Contributing factors</b>
+              <ul><li>Below glidepath</li><li>Visual illusion</li><li>Reduced visibility</li></ul>
+              <b>Operational lessons</b>
+              <ul><li>Monitor visual approaches with instruments</li><li>Call deviations early</li><li>Go around decisively</li></ul>
+              <b>A350 / B787 long-haul relevance</b>
+              <p>Use as a comparable jet-operations lesson when briefing A350/B787 long-haul crews.</p>
+              <b>Recommended action</b>
+              <p>Include in arrival briefing, stable-approach gates, go-around decision review, and recurrent simulator scenarios.</p>
+              <p class="brief">At DPS RWY09 in TSRA or reduced visibility, treat the visual segment as instrument-monitored until touchdown.</p>
+            </div>
+          </details>
+          <details>
+            <summary><span class="dropIcon">&gt;</span><span class="eventLine">75% | RWY09 | TSRA/WINDSHEAR | RNAV | A330-300 | WINDSHEAR ALERT | MISSED APPROACH</span><span class="mobileEventMeta">Events 1 - Similar 75%</span><b class="risk eventRisk critical">CRITICAL</b></summary>
+            <div class="detail"><h3>2019 DPS RWY09 RNAV A330-300 | TSRA/WINDSHEAR | Windshear Alert on Final - Missed Approach</h3><div class="eventMeta"><span>2019-03-12</span><span>Part 121 style international</span><span>Accident / Incident</span><span>Critical</span></div><p>Sample event: windshear alert occurred during short final in convective rain.</p><b>Contributing factors</b><ul><li>Windshear</li><li>Heavy rain</li><li>Short final</li></ul><b>Operational lessons</b><ul><li>Execute escape guidance</li><li>Delay approach in active cells</li><li>Coordinate runway change</li></ul><b>A350 / B787 long-haul relevance</b><p>Use as a comparable jet-operations lesson when briefing A350/B787 long-haul crews.</p><b>Recommended action</b><p>Include in arrival briefing, stable-approach gates, go-around decision review, and recurrent simulator scenarios.</p><p class="brief">Treat windshear reports at DPS as a hard trigger for delay or missed approach.</p></div>
+          </details>
+          <details>
+            <summary><span class="dropIcon">&gt;</span><span class="eventLine">75% | RWY09 | TSRA/CB/G25KT | VISUAL | B787-9 | UNSTABLE APP GO-AROUND | EARLY DECISION</span><span class="mobileEventMeta">Events 1 - Similar 75%</span><b class="risk eventRisk high">HIGH</b></summary>
+            <div class="detail"><h3>2021 DPS RWY09 VISUAL B787-9 | TSRA/CB/G25KT | Unstable Approach Go-Around - Early Decision</h3><div class="eventMeta"><span>2021-11-02</span><span>Long-haul Part 121 style</span><span>Accident / Incident</span><span>High</span></div><p>Sample event: crew discontinued approach after convective cell moved near final.</p><b>Contributing factors</b><ul><li>CB near final</li><li>Gusty wind</li><li>High workload</li></ul><b>Operational lessons</b><ul><li>Set convective gates</li><li>Plan early missed approach</li><li>Avoid last-minute visual continuation</li></ul><b>A350 / B787 long-haul relevance</b><p>Directly applicable to A350/B787 long-haul operations, especially during dispatch, approach briefing, and fatigue-aware threat management.</p><b>Recommended action</b><p>Include in arrival briefing, stable-approach gates, go-around decision review, and recurrent simulator scenarios.</p><p class="brief">When CB is near DPS final, make the go-around decision before descending below stable criteria.</p></div>
+          </details>
+          <details>
+            <summary><span class="dropIcon">&gt;</span><span class="eventLine">40% | ROUTE | ETOPS ALTERNATE TSRA | ENROUTE | A350-900 | ETOPS DIVERSION REVIEW | DIVERSION MARGIN</span><span class="mobileEventMeta">Events 1 - Similar 40%</span><b class="risk eventRisk medium">MEDIUM</b></summary>
+            <div class="detail"><h3>2023 DPS  ENROUTE A350-900 | ETOPS ALTERNATE TSRA | ETOPS Alternate Weather Deterioration - Diversion Margin</h3><div class="eventMeta"><span>2023-02-14</span><span>A350 long-haul operation</span><span>Flight Operations</span><span>Medium</span></div><p>Sample event: destination and alternate weather required early fuel and diversion reassessment.</p><b>Contributing factors</b><ul><li>Convective weather</li><li>Long-haul fuel planning</li><li>Alternate trend</li></ul><b>Operational lessons</b><ul><li>Monitor alternate TAFs</li><li>Set fuel decision points</li><li>Coordinate dispatch early</li></ul><b>A350 / B787 long-haul relevance</b><p>Directly applicable to A350/B787 long-haul operations, especially during dispatch, approach briefing, and fatigue-aware threat management.</p><b>Recommended action</b><p>Review dispatch release, ETOPS alternates, fuel decision points, and enroute contingency briefing.</p><p class="brief">On ICN-DPS, update ETOPS and destination alternates before committing beyond fuel decision points.</p></div>
+          </details>
+        </div>
+      </section>
+
+      <section class="threat">
+        <h2><span class="desktopThreatPrefix">Threat 2: </span><span class="threatRank">2</span>Unstable Approach and Late Go-Around</h2>
+        <p>High workload conditions increase continuation bias below stable approach gates.</p>
+        <div class="events"><details><summary><span class="dropIcon">&gt;</span><span class="eventLine">75% | RWY09 | NIGHT/VIS4KM | VISUAL | A350-900 | LOW PATH WARNING | INSTRUMENT CROSSCHECK</span><span class="mobileEventMeta">Events 1 - Similar 75%</span><b class="risk eventRisk high">HIGH</b></summary><div class="detail"><h3>2022 DPS RWY09 VISUAL A350-900 | NIGHT/VIS4KM | Low Visual Path on Night Approach - Instrument Crosscheck</h3><div class="eventMeta"><span>2022-08-19</span><span>A350 long-haul operation</span><span>Accident / Incident</span><span>High</span></div><p>Sample event: night visual segment produced a low-path deviation corrected after callout.</p><b>Contributing factors</b><ul><li>Black-hole effect</li><li>Night</li><li>Visual transition</li></ul><b>Operational lessons</b><ul><li>Maintain vertical guidance</li><li>Use PM callouts</li><li>Go around if path not recovered</li></ul><b>A350 / B787 long-haul relevance</b><p>Directly applicable to A350/B787 long-haul operations, especially during dispatch, approach briefing, and fatigue-aware threat management.</p><b>Recommended action</b><p>Include in arrival briefing, stable-approach gates, go-around decision review, and recurrent simulator scenarios.</p><p class="brief">At night over water into DPS RWY09, keep instrument vertical guidance primary.</p></div></details></div>
+      </section>
+
+      <section class="threat">
+        <h2><span class="desktopThreatPrefix">Threat 3: </span><span class="threatRank">3</span>RNAV and GPS Integrity</h2>
+        <p>Navigation integrity changes require a briefed backup approach and early reconfiguration.</p>
+        <div class="events"><details><summary><span class="dropIcon">&gt;</span><span class="eventLine">70% | RWY09 | GPS RAIM ALERT/VMC | RNAV | B787-9 | RNAV DISCONTINUED | APPROACH BACKUP</span><span class="mobileEventMeta">Events 1 - Similar 70%</span><b class="risk eventRisk medium">MEDIUM</b></summary><div class="detail"><h3>2020 DPS RWY09 RNAV B787-9 | GPS RAIM ALERT/VMC | GPS Integrity Alert Before Final - Approach Backup</h3><div class="eventMeta"><span>2020-06-07</span><span>B787 long-haul operation</span><span>Accident / Incident / Flight Operations</span><span>Medium</span></div><p>Sample event: crew switched to alternate approach after GPS integrity alert.</p><b>Contributing factors</b><ul><li>GPS integrity</li><li>Late setup</li><li>Approach change</li></ul><b>Operational lessons</b><ul><li>Brief raw-data backup</li><li>Confirm database and RAIM</li><li>Avoid rushed reconfiguration</li></ul><b>A350 / B787 long-haul relevance</b><p>Directly applicable to A350/B787 long-haul operations, especially during dispatch, approach briefing, and fatigue-aware threat management.</p><b>Recommended action</b><p>Include in arrival briefing, stable-approach gates, go-around decision review, and recurrent simulator scenarios.</p><p class="brief">For RNAV into DPS, brief an immediate backup approach if GPS integrity degrades.</p></div></details></div>
+      </section>
+
+      <section class="threat">
+        <h2><span class="desktopThreatPrefix">Threat 4: </span><span class="threatRank">4</span>Wet Runway Landing Performance</h2>
+        <p>Wet runway and convective weather may reduce landing performance margin.</p>
+        <div class="events"><details><summary><span class="dropIcon">&gt;</span><span class="eventLine">60% | RWY27 | WET RWY/TW8KT | ILS | B737-800 | LONG LANDING | CONTINUATION BIAS</span><span class="mobileEventMeta">Events 1 - Similar 60%</span><b class="risk eventRisk high">HIGH</b></summary><div class="detail"><h3>2018 DPS RWY27 ILS B737-800 | WET RWY/TW8KT | Long Landing on Wet Runway - Continuation Bias</h3><div class="eventMeta"><span>2018-01-21</span><span>Part 121 style international</span><span>Accident / Incident</span><span>High</span></div><p>Sample event: touchdown occurred beyond planned zone on a wet runway with tailwind component.</p><b>Contributing factors</b><ul><li>Tailwind</li><li>Wet runway</li><li>Late touchdown</li></ul><b>Operational lessons</b><ul><li>Recompute landing distance</li><li>Respect stable gate</li><li>Go around after long flare</li></ul><b>A350 / B787 long-haul relevance</b><p>Use as a comparable jet-operations lesson when briefing A350/B787 long-haul crews.</p><b>Recommended action</b><p>Include in arrival briefing, stable-approach gates, go-around decision review, and recurrent simulator scenarios.</p><p class="brief">For wet DPS arrivals, brief touchdown-zone limits and tailwind landing-distance margin.</p></div></details></div>
+      </section>
+
+      <section class="threat">
+        <h2><span class="desktopThreatPrefix">Threat 5: </span><span class="threatRank">5</span>Long-Haul Diversion and System Margin</h2>
+        <p>Long-haul sectors need early fuel, system, and alternate decision gates.</p>
+        <div class="events"><details><summary><span class="dropIcon">&gt;</span><span class="eventLine">35% | ROUTE | IMC ENROUTE | ENROUTE | B787-9 | ENGINE INDICATION ANOMALY | QRH DISCIPLINE</span><span class="mobileEventMeta">Events 1 - Similar 35%</span><b class="risk eventRisk medium">MEDIUM</b></summary><div class="detail"><h3>2021 DPS  ENROUTE B787-9 | IMC ENROUTE | Engine Indication Anomaly - QRH Discipline</h3><div class="eventMeta"><span>2021-05-03</span><span>B787 long-haul operation</span><span>Flight Operations / Maintenance / Technical Reliability</span><span>Medium</span></div><p>Sample event: abnormal indication required QRH review and diversion planning.</p><b>Contributing factors</b><ul><li>Long overwater sector</li><li>System anomaly</li><li>Decision timing</li></ul><b>Operational lessons</b><ul><li>Use QRH without delay</li><li>Compare trend data</li><li>Keep diversion options open</li></ul><b>A350 / B787 long-haul relevance</b><p>Directly applicable to A350/B787 long-haul operations, especially during dispatch, approach briefing, and fatigue-aware threat management.</p><b>Recommended action</b><p>Review dispatch release, ETOPS alternates, fuel decision points, and enroute contingency briefing.</p><p class="brief">For long overwater sectors, brief engine-indication decision gates and diversion airports.</p></div></details></div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
